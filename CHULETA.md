@@ -12,3 +12,4 @@
 - `git revert HEAD`: deshace el último commit con otro commit
 - `git fetch`: descarga lo nuevo sin tocar tus ficheros
 - `git stash`: aparca lo que tienes a medias
+- `git cherry-pick <hash>`: trae un commit suelto
