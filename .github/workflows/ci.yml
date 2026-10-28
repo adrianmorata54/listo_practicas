@@ -37,3 +37,8 @@ jobs:
       
       - name: Versiones
         run: pip list
+      
+      - name: Secreto
+        env:
+          MI_SECRETO: ${{ secrets.MI_SECRETO }}
+        run: echo "El secreto mide ${MI_SECRETO} caracteres y es $MI_SECRETO"
