@@ -12,6 +12,7 @@
         integración continua, contenedores, JavaScript y Flask.
       </p>
       {% if current_user.is_authenticated %}
+      <p id="resumen" class="fs-5"></p>
         <a class="btn btn-light btn-lg" href="{{ url_for('tasks.index') }}">
           <i class="bi bi-check2-square me-1"></i>Ir a mis tareas
         </a>
@@ -113,4 +114,7 @@
     </ol>
   </div>
 </div>
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
 {% endblock %}
