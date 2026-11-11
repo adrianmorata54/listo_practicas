@@ -45,3 +45,9 @@ body {
 .error:focus {
 border: 2px solid #a80132;
 }
+
+/* Contador de caracteres: rojo y en negrita al pasarse del máximo */
+.contador-pasado {
+color: #a80132;
+font-weight: bold;
+}
