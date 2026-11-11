@@ -8,11 +8,11 @@
     <div class="card shadow-sm border-0">
       <div class="card-body p-4">
         <h1 class="h3 mb-4">{{ title }}</h1>
-
         <form method="post" novalidate id="tarea">
           {{ form.hidden_tag() }}
           {{ render_field(form.title, autofocus=true) }}
           <p id="contador" class="form-text"></p>
+          <p>Vista previa: <strong id="vista-previa"></strong></p>
           {{ render_field(form.description, rows=4) }}
           <div class="d-flex gap-2">
             {{ form.submit(class="btn btn-primary") }}
