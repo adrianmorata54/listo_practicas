@@ -3,6 +3,7 @@
 const formulario = document.getElementById("registro");
 const campoNombre = document.getElementById("name");
 const campoEmail = document.getElementById("email");
+const campoDni = document.getElementById("dni");
 const campoClave = document.getElementById("password");
 const campoRepetida = document.getElementById("confirm");
 // Borra las marcas y los mensajes del intento anterior
@@ -22,6 +23,15 @@ aviso.classList.add("invalid-feedback");
 aviso.textContent = mensaje;
 campo.parentElement.appendChild(aviso);
 }
+// Ocho dígitos y una letra mayúscula
+function formatoDni(dni) {
+return /^[0-9]{8}[A-Z]$/.test(dni);
+}
+// La letra sale del resto de dividir el número entre 23
+function letraDni(numero) {
+const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+return letras[numero % 23];
+}
 formulario.addEventListener("submit", (evento) => {
 limpiarErrores();
 let hayErrores = false;
@@ -35,6 +45,14 @@ hayErrores = true;
 }
 if (campoClave.value.length < 6) {
 mostrarError(campoClave, "La contraseña necesita al menos 6 caracteres.");
+hayErrores = true;
+}
+const dni = campoDni.value.trim();
+if (!formatoDni(dni)) {
+mostrarError(campoDni, "Escribe ocho dígitos y una letra mayúscula.");
+hayErrores = true;
+} else if (dni[8] !== letraDni(Number(dni.slice(0, 8)))) {
+mostrarError(campoDni, "La letra del DNI no es correcta.");
 hayErrores = true;
 }
 if (campoClave.value !== campoRepetida.value) {
