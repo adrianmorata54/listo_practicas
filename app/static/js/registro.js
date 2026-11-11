@@ -6,23 +6,6 @@ const campoEmail = document.getElementById("email");
 const campoDni = document.getElementById("dni");
 const campoClave = document.getElementById("password");
 const campoRepetida = document.getElementById("confirm");
-// Borra las marcas y los mensajes del intento anterior
-function limpiarErrores() {
-for (const campo of formulario.querySelectorAll(".is-invalid")) {
-campo.classList.remove("is-invalid");
-}
-for (const aviso of formulario.querySelectorAll(".invalid-feedback")) {
-aviso.remove();
-}
-}
-// Marca un campo en rojo y escribe el mensaje debajo de él
-function mostrarError(campo, mensaje) {
-campo.classList.add("is-invalid");
-const aviso = document.createElement("div");
-aviso.classList.add("invalid-feedback");
-aviso.textContent = mensaje;
-campo.parentElement.appendChild(aviso);
-}
 // Ocho dígitos y una letra mayúscula
 function formatoDni(dni) {
 return /^[0-9]{8}[A-Z]$/.test(dni);
