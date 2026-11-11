@@ -15,7 +15,6 @@
           {{ render_field(form.email) }}
           {{ render_field(form.password) }}
           {{ render_field(form.confirm) }}
-          <ul id="errores" class="text-danger"></ul>
           {{ form.submit(class="btn btn-primary w-100") }}
         </form>
 
@@ -26,8 +25,8 @@
     </div>
   </div>
 </div>
+{% endblock %}
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/registro.js') }}"></script>
-{% endblock %}
 {% endblock %}
