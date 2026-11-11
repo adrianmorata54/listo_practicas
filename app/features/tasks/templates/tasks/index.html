@@ -37,8 +37,8 @@
          title="Editar" aria-label="Editar">
         <i class="bi bi-pencil"></i>
       </a>
-      <form method="post" action="{{ url_for('tasks.delete', task_id=task.id) }}"
-            onsubmit="return confirm('¿Eliminar esta tarea?');">
+      <form class="form-borrar" method="post" action="{{ url_for('tasks.delete', task_id=task.id
+          ) }}">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <button class="btn btn-outline-danger btn-sm" type="submit" title="Eliminar" aria-label="Eliminar">
           <i class="bi bi-trash"></i>
@@ -61,4 +61,5 @@
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/tasks.js') }}"></script>
+<script src="{{ url_for('static', filename='js/borrar.js') }}"></script>
 {% endblock %}
