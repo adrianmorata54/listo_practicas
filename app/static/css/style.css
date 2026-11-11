@@ -39,3 +39,9 @@ body {
   text-decoration: line-through;
   color: #6c757d;
 }
+
+/* Validación mientras se escribe: JavaScript pone la clase y aquí se decide cómo se ve */
+.error,
+.error:focus {
+border: 2px solid #a80132;
+}
